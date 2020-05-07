@@ -18,15 +18,15 @@ def checkFunctions(formulka):
                 print("f="+formulka)
                 numberInBrackets = Decimal(subFormulka[indexStartParenthes+1:indexEndParenthes])
                 funcToEval = f"{func}({numberInBrackets})" 
-                strToNum = ne.evaluate(funcToEval)
-                strToNum = str(Decimal(str(strToNum)))
+                strToNum = float(str(ne.evaluate(funcToEval)))
+                strToNum = str(Decimal(strToNum))
                 print(f"in = {formulka}")
                 formulka = funcInputIntoFormula(formulka,index,len(func)+indexEndParenthes,strToNum)
                 print(f"out = {formulka}")
         return formulka 
 
-kek =  ne.evaluate(checkFunctions("1  +1-2+ sin (sin( cos(   30)))-     sin(sin(30))/2+100"))
-print(kek)
+# kek =  ne.evaluate(checkFunctions(str)
+# print(kek)
 # kek = Decimal(int(kek))# str( "{:f}".format(int(kek)))
 # print(type(kek))
 # kek =Decimal(eval("1 + 174671355287425475776565"))
